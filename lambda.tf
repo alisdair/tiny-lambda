@@ -2,11 +2,14 @@ provider "aws" {
   region = "us-east-1"
 }
 
+variable "app_version" {
+}
+
 resource "aws_lambda_function" "tiny_lambda" {
   function_name = "TinyLambda"
 
   s3_bucket = "tiny-lambda"
-  s3_key    = "v1.0.0/src.zip"
+  s3_key    = "v${var.app_version}/src.zip"
 
   # "main" is the filename within the zip file (main.js) and "handler"
   # is the name of the property under which the handler function was
