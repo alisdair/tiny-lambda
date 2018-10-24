@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_lambda_function" "example" {
+resource "aws_lambda_function" "tiny_lambda" {
   function_name = "TinyLambda"
 
   s3_bucket = "tiny-lambda"
@@ -20,7 +20,7 @@ resource "aws_lambda_function" "example" {
 # IAM role which dictates what other AWS services the Lambda function
 # may access.
 resource "aws_iam_role" "lambda_exec" {
-  name = "serverless_example_lambda"
+  name = "serverless_tiny_lambda"
 
   assume_role_policy = <<EOF
 {
