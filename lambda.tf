@@ -15,7 +15,7 @@ resource "aws_lambda_function" "tiny_lambda" {
   # is the name of the property under which the handler function was
   # exported in that file.
   handler = "main.handler"
-  runtime = "nodejs6.10"
+  runtime = "nodejs8.10"
 
   role = aws_iam_role.lambda_exec.arn
 }
